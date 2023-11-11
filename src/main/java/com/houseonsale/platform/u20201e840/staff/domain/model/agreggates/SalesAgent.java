@@ -6,6 +6,12 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Getter;
 
+/**
+ * SalesAgent
+ *
+ * @author Leonardo Taype
+ */
+
 @Entity
 public class SalesAgent {
     @Id

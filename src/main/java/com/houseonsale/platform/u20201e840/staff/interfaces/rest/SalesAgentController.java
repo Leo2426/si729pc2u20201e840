@@ -29,6 +29,16 @@ public class SalesAgentController {
         this.salesAgentQueryService = salesAgentQueryService;
     }
 
+
+
+    /**
+     * Creates a new sales agent
+     * @param createSalesAgentResource the resource with the sales agent data
+     * @return the sales agent resource
+     * @see CreateSalesAgentResource
+     * @see SalesAgentResource
+     */
+
     @PostMapping
     public ResponseEntity<SalesAgentResource> createCourse(@RequestBody CreateSalesAgentResource createSalesAgentResource) {
         var createSalesAgentCommand = CreateSalesAgentCommandFromResourceAssembler.toCommandFromResource(createSalesAgentResource);
