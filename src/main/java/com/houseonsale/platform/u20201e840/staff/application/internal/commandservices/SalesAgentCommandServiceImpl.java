@@ -21,6 +21,11 @@ public class SalesAgentCommandServiceImpl implements SalesAgentCommandService {
 
         if (command.commission() < 1 || command.commission()>50)
             throw new IllegalArgumentException("Commission should be between 1 and 50");
+
+
+        if (command.salesCount() < 0)
+            throw new IllegalArgumentException("SalesCount should be greater than or equal to zero");
+
         var salesAgent = new SalesAgent(command.name(), command.licenseId(), command.commission(), command.salesCount());
         salesAgentRepository.save(salesAgent);
         return salesAgent.getId();
